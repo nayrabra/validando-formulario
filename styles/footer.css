@@ -46,7 +46,19 @@
         padding: 1em;
     }
 
-    .redes-sociais__lista {
-        display: block;
+    .rodape__titulo {
+        text-align: center;
+    }
+
+    .rodape__lista li {
+        text-align: center;
+    }
+
+    .rodape__redes-sociais {
+        display: none;
+    }
+
+    .rodape__logo {
+        display: none;
     }
 }

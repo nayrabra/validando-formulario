@@ -144,6 +144,10 @@
 }
 
 @media screen and (max-width: 900px) {
+    .banner__titulo {
+        font-size: 18px;
+    }
+
     .formulario {
         width: 70%;
     }

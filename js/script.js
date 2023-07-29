@@ -1,5 +1,6 @@
 import ehUmCPF from "./valida-cpf.js";
 import ehMaiorDeIdade from "./valida-idade.js";
+import ehUmRG from "./valida-rg.js";
 const camposDoFormulario = document.querySelectorAll("[required]");
 const formulario = document.querySelector("[data-formulario]");
 
@@ -46,6 +47,7 @@ const mensagens = {
     rg: {
         valueMissing: "O campo de RG não pode estar vazio.",
         patternMismatch: "Por favor, preencha um RG válido.",
+        customError: "O RG digitado não existe.",
         tooShort: "O campo de RG não tem caractéres suficientes."
     },
     cpf: {
@@ -72,6 +74,10 @@ function verificaCampo(campo) {
     if (campo.name == "aniversario" && campo.value.leng != "") {
         ehMaiorDeIdade(campo);
     }
+    if (campo.name == "rg" && campo.value.length >= 6) {
+        ehUmRG(campo);
+    }
+
     tiposDeErro.forEach(erro => {
         if(campo.validity[erro]) {
             mensagem = mensagens[campo.name][erro];
